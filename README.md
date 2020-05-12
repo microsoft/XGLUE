@@ -4,7 +4,7 @@
 [**Website**](https://microsoft.github.io/msmarco/) |
 [**Paper**](https://arxiv.org/abs/2004.01401)
 
-This repository contains information about XGLEU, baseline systems, and evaluation methodology. 
+This repository contains information about XGLUE, baseline systems, and evaluation methodology. 
 
 ## Introduction
 This repository contains information about the large-scale cross-lingual evaluation benchmark XGLUE. XLGUE consists of 11 tasks which cover both natural language understanding and natural language generation across a broad array of languages. This repository focuses on data usage, evaluation, and introduces a set of publicly reproducable baselines.  
