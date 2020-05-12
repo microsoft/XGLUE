@@ -14,7 +14,7 @@ The 11 tasks in XGLUE can be categorized into 3 groups: single-input understandi
 
 ### Single-Input Understanding
 #### NER
-Named Entity Resolution(NET) is a combination of two existing NER tasks which covers 4 languages: English, German, Spanish, and Dutch. The task covers 4 types of named entities: person, location, organiation and miscellaneous. F1 is used as this tasks evaluation metric.
+Named Entity Resolution(NER) is a combination of two existing NER tasks which covers 4 languages: English, German, Spanish, and Dutch. The task covers 4 types of named entities: person, location, organiation and miscellaneous. F1 is used as this tasks evaluation metric.
 #### POS Tagging
 Part of speech(POS) taggig is a subset of the Universal Dependen-cies (UD) Treebanks (v2.5) which cover 18 languages. Accuracy (ACC) of the predicted POS tags is this tasks evaluation metric.
 #### News Classification
