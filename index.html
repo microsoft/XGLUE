@@ -65,7 +65,8 @@
 					<img src="img/MicrosoftLogo.png">
 				</center>
 				<div class="row">
-					<p>XGLUE is a new benchmark dataset to evaluate the performance of large-scale cross lingual pre-trained language models with respect to language understanding and generation.</p>
+					<p>XGLUE is a new benchmark dataset to evaluate the performance of cross-lingual pre-trained models with respect to cross-lingual natural language understanding and generation.</p>
+					<p>XGLUE is composed of 11 tasks spans 19 languages. For each task, the training data is only available in English. This means that to succeed at XGLUE, a model must have a strong zero-shot cross-lingual transfer capability to learn from the English data of a specific task and transfer what it learned to other languages. Comparing to its concurrent work XTREME, XGLUE has two characteristics: First, it includes cross-lingual NLU and cross-lingual NLG tasks at the same time; Second, besides including 5 existing cross-lingual tasks (i.e. NER, POS, MLQA, PAWS-X and XNLI), XGLUE selects 6 new tasks from Bing scenarios as well, including News Classification (NC), Query-Ad Matching (QADSM), Web Page Ranking (WPR), QA Matching (QAM), Question Generation (QG) and News Title Generation (NTG). Such diversities of languages, tasks and task origin provide a comprehensive benchmark for quantifying the quality of a pre-trained model on cross-lingual natural language understanding and generation.</p>
 				</div>
 				<div class="row">
 					<h3>Terms and Conditions</h3>
@@ -87,43 +88,68 @@
 				<div class="row">
 					<div class="table-responsive">
 						<h2>XGLUE Dataset and Leaderboard</h2>
-						<p>XGLUE is a collection of 11 tasks which seek to measure cross lingual language model performance.</p>
 						<h4>Tasks</h4>
 						<ol>
 							<li>NER</li>
-							<li>POS Tagging</li>
-							<li>News Classification</li>
+							<li>POS Tagging (POS)</li>
+							<li>News Classification (NC)</li>
 							<li>MLQA</li>
 							<li>XNLI</li>
 							<li>PAWS-X</li>
-							<li>Query-Ads Matching</li>
-							<li>Web Page Ranking</li>
-							<li>Question Answering Matching</li>
-							<li>Question Generation</li>
-							<li>News Title Generation</li>
+							<li>Query-Ad Matching (QADSM)</li>
+							<li>Web Page Ranking (WPR)</li>
+							<li>QA Matching (QAM)</li>
+							<li>Question Generation (QG)</li>
+							<li>News Title Generation (NTG)</li>
 						</ol>
 						<h4>Relevant Links</h4>
-						<a class="btn btn-primary btn-md" style='margin-right: 3px;' href="https://github.com/microsoft/XGLUE">XGLUE Github Repo</a><h3>Dataset Download links</h3>
+						<a class="btn btn-primary btn-md" style='margin-right: 3px;' href="https://github.com/microsoft/XGLUE">XGLUE Download</a>
+						<a class="btn btn-primary btn-md" style='margin-right: 3px;' href="https://arxiv.org/abs/2004.01401">XGLUE Paper</a>
+						<a class="btn btn-primary btn-md" style='margin-right: 3px;' href="https://arxiv.org/abs/2004.01401">Unicoder Baseline</a>
 						<div id="xgluedata"> </div>
-						<h4>Leaderboard(05/25/2020-Present) ranked by Aggregate XGLUE Score</h4>
-						<table class="table table-striped" id='xgluetable'>
+						<h4>Leaderboard (05/25/2020-Present) ranked by XGLUE Score (average score on 11 tasks)</h4>
+						<div style="text-align:center">
+							<table class="table table-striped" id='xgluetable'>
 							<thead>
 								<tr>
 									<th>Rank</th>
 									<th class="col-md-9">Model</th>
 									<th class="col-md-1">Submission Date</th>
+									<th class="col-md-1">NER</th>
+									<th class="col-md-1">POS</th>
+									<th class="col-md-1">NC</th>
+									<th class="col-md-1">MLQA</th>
+									<th class="col-md-1">XNLI</th>
+									<th class="col-md-1">PAWS-X</th>
+									<th class="col-md-1">QADSM</th>
+									<th class="col-md-1">WPR</th>
+									<th class="col-md-1">QAM</th>
+									<th class="col-md-1">QG</th>
+									<th class="col-md-1">NTG</th>
 									<th class="col-md-1">XGLUE Score</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tbody>
 									<tr>
-									   <td><strong>Unicoder</strong> XGLUE Team</td>
-									   <td><a href="https://twitter.com/MSMarcoAI/">May 2020</a></td>
-									   <td>-</td>
+									   	<td><strong>Unicoder Baseline</strong> (XGLUE Team)</td>
+									   	<td>2020-05-25</a></td>
+									   	<td>79.7</td>
+										<td>79.6</td>
+										<td>83.5</td>
+										<td>66.0</td>
+										<td>75.3</td>
+										<td>90.1</td>
+										<td>68.4</td>
+										<td>73.9</td>
+										<td>68.9</td>
+										<td>10.6</td>
+										<td>10.7</td>
+										<td>64.2</td>
 								   </tr>
 							</tbody>
 						</table>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -136,18 +162,18 @@
 						<p>Once you have built a model that meets your expectations on evaluation with the dev set, you can submit your test results to get official evaluation on the test set. To ensure the integrity of the official test results, we do not release the correct answers for test set to the public. To submit your model for official evaluation on the test set, follow the below steps:</p>
 						<ol>
 							<li>Generate your candidate output for the dev set.</li>
-							<li>Run the official evaluation methodologies found in the task specific git repo and verify your systems are running as expected</li>
-							<li>Generate your candidate output for the eval/test set and submit the following information by <script type="text/javascript">gen_mail_to_link('xglue','microsoft.com','XGLUE Submission','emailing us');</script></li>
+							<li>Run the official evaluation methodologies found in the task specific git repo and verify your systems are running as expected.</li>
+							<li>Generate your candidate output for the eval/test set and submit the following information by <script type="text/javascript">gen_mail_to_link('xglue','microsoft.com','XGLUE Submission','emailing us');</script>.</li>
 						</ol>
-						<p>Your email should include</p>
+						<p>Your email should include:</p>
 						<ol>
-							<li>Candidate evaluation file</li>
-							<li>Candidate dev file</li>
-							<li>Individual/Team Name: Name of the individual or the team to appear in the leaderboard [Required]</li>
-							<li>Individual/Team Institution: Name of the institution of the individual or the team to appear in the leaderboard [Optional]</li>
-							<li>Model code: Training code for the model [Recommended]</li>
-							<li>Model information: Name of the model/technique to appear in the leaderboard [Required]</li>
-							<li>Paper Information: Name, Citation, URL of the paper if model is from a published work to appear in the leaderboard [Optional]</li>
+							<li>Candidate evaluation file.</li>
+							<li>Candidate dev file.</li>
+							<li>Individual/Team Name: Name of the individual or the team to appear in the leaderboard. [Required]</li>
+							<li>Individual/Team Institution: Name of the institution of the individual or the team to appear in the leaderboard. [Optional]</li>
+							<li>Model code: Training code for the model. [Recommended]</li>
+							<li>Model information: Name of the model/technique to appear in the leaderboard. [Required]</li>
+							<li>Paper Information: Name, Citation, URL of the paper if model is from a published work to appear in the leaderboard. [Optional]</li>
 						</ol>
 						<p>To avoid "P-hacking" we discourage too many submissions from the same group in a short period of time.</p>
            	 		</div>
@@ -161,11 +187,16 @@
 						<h1>About XGLUE</h1>
 						<h3><script type="text/javascript">gen_mail_to_link('xglue','microsoft.com','XGLUE Feedback','Email us');</script></h3>
 						<div class="row">
-							<div class="col-md-12"><p>XGLUE is a collection of MultiLingual datasets focused on evaluating the cross lingual understating of Language Models.</p></div>
+							<div class="col-md-12"><p>XGLUE is a new benchmark dataset to evaluate the performance of cross-lingual pre-trained models with respect to cross-lingual natural language understanding and generation.</p></div>
 							</div>
 						<h2>Current Team</h2>
 						<div class="row">
 							<div class="col-md-4"><a href="https://spacemanidol.github.io/"><img src='img/daniel.png' width="150" height="150" /><br /><strong>Daniel Campos</strong><br />Program Manager</a></div>
+							<div class="col-md-4"><a href="https://yaoboliang/"><img src='img/yaoboliang.png' width="150" height="150" /><br /><strong>Yaobo Liang</strong><br />Researcher</a></div>
+							<div class="col-md-4"><a href="https://yeyungong/"><img src='img/yeyungong.png' width="150" height="150" /><br /><strong>Yeyun Gong</strong><br />Senior Researcher</a></div>
+							<div class="col-md-4"><a href="https://nanduan/"><img src='img/nanduan.png' width="150" height="150" /><br /><strong>Nan Duan</strong><br />Principal Research Manager</a></div>
+							<div class="col-md-4"><a href="https://minggong/"><img src='img/minggong.png' width="150" height="150" /><br /><strong>Ming Gong</strong><br />Principal Applied Scientist Manager</a></div>
+							<div class="col-md-4"><a href="https://linjunshou/"><img src='img/linjunshou.png' width="150" height="150" /><br /><strong>Linjun Shou</strong><br />Senior Applied Scientist</a></div>
 						</div>
 					</div>
 				</div>
