@@ -101,7 +101,7 @@ We put the baseline system to [Unicoder](https://github.com/microsoft/Unicoder) 
 ### Submissions
 To submit your predictions for evaluation, please create a single folder which contains the 11 sub-folders named after each task (see [reference file](evaluation/Unicoder_prediction_on_XGLUE_test) for an example). 
 Inside each folder, create one prediction file for each language and name the file using the following format: `{language}.prediction` where `{language}` is the 2 character [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code.
-Please validate that you have done this correctly by evaluating against the development file. Once that is done <a href='ms-marco@microsoft.com'>email your submission</a>. We will reply with your model performance.
+Please validate that you have done this correctly by evaluating against the development file. Once that is done <a href='xglue@microsoft.com'>email your submission</a>. We will reply with your model performance.
 
 ### Evaluation
 To evaluate your model's performance, we will compare your prediction files with the ground truth files.
@@ -120,8 +120,8 @@ sacrebleu
 ```
 
 The detailed format of each task is at [Evaluation ReadMe](./evaluation/README.md).
-
-We provide the output of Unicoder as [dev example](evaluation/Unicoder_prediction_on_XGLUE_dev) and [test example](evaluation/Unicoder_prediction_on_XGLUE_test).
+### Baseline
+To aid your model comparison we have included the output of our baseline system, unicoder.  Please find the [dev example](evaluation/Unicoder_prediction_on_XGLUE_dev) and [test example](evaluation/Unicoder_prediction_on_XGLUE_test).
 ## Paper
 If you use our benchmark or dataset, please cite our paper `\cite{Liang2020XGLUEAN}`.
 ```
