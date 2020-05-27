@@ -210,7 +210,7 @@ def get_score_by_task(task):
             labels, preds = load_pawsx_data(task, lg)   
 
         if task == "MLQA":
-            results[lg] = mlqa_evaluate(datasets["data"], preds, lg)["f1"]
+            results[lg] = mlqa_evaluate(datasets["data"], preds, lg)["f1"]/100 #Normalize
         elif task == "NER":
             results[lg] = f1_score(labels, preds)
         elif task == "POS":
@@ -220,7 +220,7 @@ def get_score_by_task(task):
         elif task == "WPR":
             results[lg] = simple_ndcg(preds, labels, guids)
         elif task == "QG" or task == "NTG":
-            results[lg] = sacrebleu.corpus_bleu(preds, [labels], lowercase=True).score
+            results[lg] = sacrebleu.corpus_bleu(preds, [labels], lowercase=True).score/100 #Normalize
     avg = 0
     count = 0
     for key in results.keys():
@@ -231,8 +231,10 @@ def get_score_by_task(task):
     return results
 
 task2result = {}
+averages = []
 for task in args.tasks.split(","):
     task2result[task] = get_score_by_task(task)
     print(task)
     print(task2result[task])
-
+    averages.append(task2result[task]["avg"])
+print("Average across all tasks:{}".format(np.mean(averages))) 
