@@ -1,0 +1,129 @@
+=================================================================
+XGLUE train/dev/test file format (* denotes a specific language):
+=================================================================
+	QAM:
+		(1) xglue.qam.en.train:		question \t answer passage \t answer label
+		(2) xglue.qam.*.dev:		question \t answer passage \t answer label
+		(3) xglue.qam.*.test:		question \t answer passage
+
+	QADSM:
+		(1) xglue.qadsm.en.train:	query \t ad title \t ad description \t relevance label
+		(2) xglue.qadsm.*.dev:		query \t ad title \t ad description \t relevance label
+		(3) xglue.qadsm.*.test:		query \t ad title \t ad description
+
+	WPR:
+		(1) xglue.wpr.en.train:		query \t web page title \t web page snippet \t relevance label
+		(2) xglue.wpr.*.dev:		query \t web page title \t web page snippet \t relevance label
+		(3) xglue.wpr.*.test:		query \t web page title \t web page snippet
+
+	NC:
+		(1) xglue.nc.en.train:		query \t news title \t news body \t news category
+		(2) xglue.nc.*.dev:			query \t news title \t news body \t news category
+		(3) xglue.nc.*.test:		query \t news title \t news body
+
+	QG:
+		(1) xglue.qg.en.src.train:	answer passage
+		(2) xglue.qg.en.tgt.train:	labeled question
+		(3) xglue.qg.*.src.dev:		answer passage
+		(4) xglue.qg.*.tgt.dev:		labeled question
+		(5) xglue.qg.*.src.test:	answer passage
+
+	NTG:
+		(1) xglue.ntg.en.src.train:	news body
+		(2) xglue.ntg.en.tgt.train:	labeled news title
+		(3) xglue.ntg.*.src.dev:	news body
+		(4) xglue.ntg.*.tgt.dev:	labeled news title
+		(5) xglue.ntg.*.src.test:	news body
+
+	XNLI:
+		(1) multinli.train.en.tsv	premise \t hypothesis \t label
+		(2) xnli.dev.tsv			language \t gold_label \t sentence1_binary_parse \t sentence2_binary_parse \t sentence1_parse \t sentence2_parse \t sentence1 \t sentence2 \t promptID \t ...
+		(3) xnli.test.tsv			language \t gold_label \t sentence1_binary_parse \t sentence2_binary_parse \t sentence1_parse \t sentence2_parse \t sentence1 \t sentence2 \t promptID \t ...
+
+	NER:
+		(sentences are separated by a blank line)
+		(1) en.train			word \space label
+		(2) *.dev				word \space label
+		(3) *.test				word \space label
+
+	POS:
+		(sentences are separated by a blank line)
+		(1) en.train			word \space label
+		(2) *.dev				word \space label
+		(3) *.test				word \space label
+
+	PAWSX:
+		(The first line is header: "id" \t "sentence1" \t "sentence2" \t "label")
+		(1) en/train.tsv			id \t sentence1 \t sentence2 \t label
+		(2) */dev_2k.tsv			id \t sentence1 \t sentence2 \t label
+		(3) */test_2k.tsv			id \t sentence1 \t sentence2 \t label
+
+	MLQA:
+		(1) squad1.1/train-v1.1.json	
+			{
+				"title": "...",
+				"paragraphs": [
+				{
+					"context": "...",
+					"qas": [
+					{
+					  "answers": [
+						{
+						  "answer_start": ...,
+						  "text": "..."
+						}
+					  ],
+					  "question": "...",
+					  "id": "..."
+					}]
+				}
+			}
+		(2) MLQA/MLQA_v1/dev/dev-context-*-question-*.json		same as train set
+		(3) MLQA/MLQA_v1/test/test-context-*-question-*.json	same as train set
+
+=================================================================
+XGLUE prediction file format (* denotes a specific language):
+=================================================================
+(NOTES: All the tasks except MLQA and PAWS-X: The line number of each prediction file should be same as the input file. The i-th line of input corresponding to i-th line of output.
+PAWS-X's input file has one additional header. MLQA uses JSON format.)
+
+	QAM:
+		QAM/*.prediction:		predicted label
+		(Label should be in [0, 1])
+
+	QADSM:
+		QADSM/*.prediction:		predicted label
+		(Label should be in ["Good", "Bad"])
+
+	WPR:
+		WPR/*.prediction:		predicted label
+		(Label should be in [0, 1, 2, 3, 4], the meaning of every rating is presented by the dictionary: {"perfect":"4", "excellent":"3", "good":"2", "fair":"1", "bad":"0"})
+
+	NC:
+		NC/*.prediction:			predicted label
+		(Label should be in ["foodanddrink", "sports", "news", "entertainment", "health", "video", "finance", "travel", "lifestyle", "autos"])
+
+	QG:
+		QG/*.prediction:		predicted question
+
+	NTG:
+		NTG/*.prediction:  	predicted news title
+
+	XNLI:
+		XNLI/*.prediction:		predicted label
+		(Label should be in ["neutral", "contradiction", "entailment"])
+
+	NER:
+		NER/*.prediction:		predicted label of each word
+		(Label should be in ["B-LOC", "B-MISC", "B-ORG", "B-PER", "I-LOC", "I-MISC", "I-ORG", "I-PER", "O"])
+
+	POS:
+		POS/*.prediction:		predicted label of each word
+		(Label should be in ["ADJ", "ADP", "ADV", "AUX", "CCONJ", "DET", "INTJ", "NOUN", "NUM", "PART", "PRON", "PROPN", "PUNCT", "SCONJ", "SYM", "VERB", "X"])
+
+	PAWS-X:
+		PAWSX/*.prediction:		predicted label
+		(Label should be in [0, 1])
+
+	MLQA:
+		MLQA/*.prediction:		{"qas_id1": "answer text 1", "qas_id2": "answer text 2"}
