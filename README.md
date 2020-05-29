@@ -1,6 +1,6 @@
 # XGLUE: 
 [**Tasks**](#tasks-and-languages) |
-[**Dataset**](#get-the-data) |
+[**Dataset**](#get-dataset) |
 [**Leaderboard**](https://microsoft.github.io/XGLUE/) |
 [**Baseline**](https://github.com/microsoft/Unicoder) |
 [**Paper**](https://arxiv.org/abs/2004.01401)
