@@ -22,10 +22,14 @@
 			}
 		</script>
 		    <script type="text/javascript">
+				var clicked = false;
 				function addDownloadLink() {
 					if (document.getElementById("TA").checked == true) {
 						//Usefulness
-						document.getElementById("xgluedata").innerHTML += "<a class=\"btn btn-primary btn-md\" style='margin-right: 3px;' href=\"https://msmarco.blob.core.windows.net/xglue/xglue_public.tar.gz\">XGLUE Data</a>"
+						if (!clicked) {
+							document.getElementById("xgluedata").innerHTML += "<a class=\"btn btn-primary btn-md\" style='margin-right: 3px;' href=\"https://msmarco.blob.core.windows.net/xglue/xglue_public.tar.gz\">XGLUE Data</a>"
+							clicked = true;
+						}
 						alert("Download Links are now viewable")
 					} else {
 						alert("Please Agree to our conditions to download the dataset")
