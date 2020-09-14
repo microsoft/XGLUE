@@ -82,6 +82,12 @@
 					<p>XGLUE is composed of 11 tasks spans 19 languages. For each task, the training data is only available in English. This means that to succeed at XGLUE, a model must have a strong zero-shot cross-lingual transfer capability to learn from the English data of a specific task and transfer what it learned to other languages. Comparing to its concurrent work XTREME, XGLUE has two characteristics: First, it includes cross-lingual NLU and cross-lingual NLG tasks at the same time; Second, besides including 5 existing cross-lingual tasks (i.e. NER, POS, MLQA, PAWS-X and XNLI), XGLUE selects 6 new tasks from Bing scenarios as well, including News Classification (NC), Query-Ad Matching (QADSM), Web Page Ranking (WPR), QA Matching (QAM), Question Generation (QG) and News Title Generation (NTG). Such diversities of languages, tasks and task origin provide a comprehensive benchmark for quantifying the quality of a pre-trained model on cross-lingual natural language understanding and generation.</p>
 				</div>
 				<div class="row">
+					<h3>Important Updates</h3> 
+				</div>
+				<div class="row">
+					<p>Bugs about submission email has been fixed.</p>
+				</div>
+				<div class="row">
 					<h3>Terms and Conditions</h3>
 					<p>The XGLUE datasets are intended for non-commercial research purposes only to promote advancement in the field of artificial intelligence and related areas, and is made available free of charge without extending any license or other intellectual property rights.  The dataset is provided “as is” without warranty and usage of the data has risks since we may not own the underlying rights in the documents.  We are not be liable for any damages related to use of the dataset.  Feedback is voluntarily given and can be used as we see fit. Upon violation of any of these terms, your rights to use the dataset will end automatically.</p><br /><br /> <p> If you have questions about use of the dataset or any research outputs in your products or services, we encourage you to undertake your own independent legal review.  For other questions, please feel free to contact us.</p>            
 					<div class="checkbox">
@@ -124,7 +130,7 @@
 						<div class="row">&nbsp;</div>
 						<h4>Leaderboard (05/25/2020-Present) ranked by XGLUE Score (average score on 11 tasks)</h4>
 						<div style="text-align:center">
-							<table class="table table-striped" id='xgluetable'>
+							<table class="table table-striped" id='xgluetable' style="font-size:75%">
 							<thead>
 								<tr>
 									<th>Rank</th>
@@ -141,13 +147,33 @@
 									<th class="col-md-1">QAM</th>
 									<th class="col-md-1">QG</th>
 									<th class="col-md-1">NTG</th>
+									<th class="col-md-1">XGLUE-Understanding Score</th>
+									<th class="col-md-1">XGLUE-Generation Score</th>
 									<th class="col-md-1">XGLUE Score</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tbody>
 									<tr>
-									   	<td><strong>Unicoder Baseline</strong> (XGLUE Team)</td>
+									   	<td><strong><a href="https://arxiv.org/abs/2009.05166">FILTER</a></strong><br/> (Microsoft Dynamics 365 AI Research)</td>
+									   	<td>2020-09-14</a></td>
+									   	<td>82.6</td>
+										<td>81.6</td>
+										<td>83.5</td>
+										<td>76.2</td>
+										<td>83.9</td>
+										<td>93.8</td>
+										<td>71.4</td>
+										<td>74.7</td>
+										<td>73.4</td>
+										<td>-</td>
+										<td>-</td>
+										<td>80.1</td>
+										<td>-</td>
+										<td>-</td>
+								   </tr>
+									<tr>
+									   	<td><strong>Unicoder Baseline</strong><br/> (XGLUE Team)</td>
 									   	<td>2020-05-25</a></td>
 									   	<td>79.7</td>
 										<td>79.6</td>
@@ -159,6 +185,8 @@
 										<td>73.9</td>
 										<td>68.9</td>
 										<td>10.6</td>
+										<td>10.7</td>
+										<td>76.1</td>
 										<td>10.7</td>
 										<td>64.2</td>
 								   </tr>
@@ -272,7 +300,7 @@
 							<div class="col-md-4"><a href="https://www.microsoft.com/en-us/research/people/yalia/"><img src='https://www.microsoft.com/en-us/research/uploads/prod/2020/05/me.jpg' width="150" height="150" /><br /><strong>Yaobo Liang</strong><br />Researcher</a></div>
 							<div class="col-md-4"><a href="https://www.microsoft.com/en-us/research/people/yegong/"><img src='https://www.microsoft.com/en-us/research/uploads/prod/2020/06/Yeyun-5ee31399c0457.png' width="150" height="150" /><br /><strong>Yeyun Gong</strong><br />Senior Researcher</a></div>
 							<div class="col-md-4"><a href="https://www.microsoft.com/en-us/research/people/nanduan/"><img src='https://www.microsoft.com/en-us/research/uploads/prod/2019/08/me.small_.jpg' width="117" height="150" /><br /><strong>Nan Duan</strong><br />Principal Research Manager</a></div>
-							<div class="col-md-4"><a href="https://www.microsoft.com/en-us/research/people/migon/"><img src='https://media-exp1.licdn.com/dms/image/C5103AQG6-c_yCALzaA/profile-displayphoto-shrink_400_400/0?e=1596067200&v=beta&t=3Mv9UDUjkztbJ3ZvH_l-Nb5VJGIe1D0Zn4KU5vEwSBA' width="150" height="150" /><br /><strong>Ming Gong</strong><br />Principal Applied Scientist Manager</a></div>
+							<div class="col-md-4"><a href="https://www.microsoft.com/en-us/research/people/migon/"><img src='https://www.microsoft.com/en-us/research/uploads/prod/2020/04/Ming-Photoes.jpg' width="170" height="150" /><br /><strong>Ming Gong</strong><br />Principal Applied Scientist Manager</a></div>
 							<div class="col-md-4"><a href="https://www.microsoft.com/en-us/research/people/lisho/"><img src='https://www.microsoft.com/en-us/research/uploads/prod/2020/04/lisho-original.jpg' width="150" height="150" /><br /><strong>Linjun Shou</strong><br />Senior Applied Scientist</a></div>
 							<div class="col-md-4"><a href="https://spacemanidol.github.io/"><img src='img/daniel.png' width="150" height="150" /><br /><strong>Daniel Campos</strong><br />Program Manager</a></div>
 						</div>

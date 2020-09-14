@@ -5,6 +5,10 @@
 [**Baseline**](https://github.com/microsoft/Unicoder) |
 [**Paper**](https://arxiv.org/abs/2004.01401)
 
+## Updates
+
+Bugs about submission email has been fixed.
+
 ## Introduction
 This repository contains information about the cross-lingual evaluation benchmark XGLUE, which is composed of 11 tasks spans 19 languages.
 For each task, the training data is only available in English. This means that to succeed at XGLUE, a model must have a strong zero-shot cross-lingual transfer capability to learn from the English data of a specific task and transfer what it learned to other languages. 
