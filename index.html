@@ -27,7 +27,8 @@
 					if (document.getElementById("TA").checked == true) {
 						//Usefulness
 						if (!clicked) {
-							document.getElementById("xgluedata").innerHTML += "<a class=\"btn btn-primary btn-md\" style='margin-right: 3px;' href=\"https://msmarco.blob.core.windows.net/xglue/xglue_public.tar.gz\">XGLUE Data</a>"
+							//document.getElementById("xgluedata").innerHTML += "<a class=\"btn btn-primary btn-md\" style='margin-right: 3px;' href=\"https://msmarco.blob.core.windows.net/xglue/xglue_public.tar.gz\">XGLUE Data</a>"
+							document.getElementById("xgluedata").innerHTML += "<a class=\"btn btn-primary btn-md\" style='margin-right: 3px;' href=\"https://xglue.blob.core.windows.net/xglue/xglue_full_dataset.tar.gz\">XGLUE Data with Test</a>"
 							clicked = true;
 						}
 						alert("Download Links are now viewable")
@@ -88,6 +89,7 @@
 					<ul>
 						<li>2020-09-14: Fix the submission email bug.</li>
 						<li>2020-09-14: add two sub-scores "XGLUE-Understanding Score" and "XGLUE-Generation Score" for understanding and generation respectively.</li>
+						<li>2020-11-26: release the test part for better results reproducing.</li>
 					</ul>
 					<p></p>
 				</div>
@@ -135,12 +137,14 @@
 						<h4>Leaderboard (05/25/2020-Present) ranked by XGLUE Score (average score on 11 tasks)</h4>
 						<p>XGLUE-Understanding Score is the average of tasks 1-9. XGLUE-Generation Score is the average of tasks 10-11.</p>
 						<div style="text-align:center">
-							<table class="table table-striped" id='xgluetable' style="font-size:75%">
+							<table class="table table-striped" id='xgluetable' style="font-size:60%">
 							<thead>
 								<tr>
 									<th>Rank</th>
 									<th class="col-md-9">Model</th>
 									<th class="col-md-1">Submission Date</th>
+									<th class="col-md-12">Dataset Translation</th>
+									<th class="param">Parameter (Million)</th>
 									<th class="col-md-1">NER</th>
 									<th class="col-md-1">POS</th>
 									<th class="col-md-1">NC</th>
@@ -162,6 +166,8 @@
 									<tr>
 									   	<td><strong><a href="https://arxiv.org/abs/2009.05166">FILTER</a></strong><br/> (Microsoft Dynamics 365 AI Research)</td>
 									   	<td>2020-09-14</a></td>
+										<td>Yes</td>
+										<td>550M</td>
 									   	<td>82.6</td>
 										<td>81.6</td>
 										<td>83.5</td>
@@ -180,6 +186,8 @@
 									<tr>
 									   	<td><strong>Unicoder Baseline</strong><br/> (XGLUE Team)</td>
 									   	<td>2020-05-25</a></td>
+										<td>No</td>
+										<td>270M</td>
 									   	<td>79.7</td>
 										<td>79.6</td>
 										<td>83.5</td>
@@ -221,7 +229,7 @@
 							<li>Individual/Team Name: Name of the individual or the team to appear in the leaderboard. [Required]</li>
 							<li>Individual/Team Institution: Name of the institution of the individual or the team to appear in the leaderboard. [Optional]</li>
 							<li>Model code: Training code for the model. [Recommended]</li>
-							<li>Model information: Name of the model/technique to appear in the leaderboard. [Required]</li>
+							<li>Model information: Name of the model/technique to appear in the leaderboard, whether used translated data in fine-tuning, the parameter number of model. [Required]</li>
 							<li>Paper Information: Name, Citation, URL of the paper if model is from a published work to appear in the leaderboard. [Optional]</li>
 						</ol>
 						<p>To avoid "P-hacking" we discourage too many submissions from the same group in a short period of time.</p>
