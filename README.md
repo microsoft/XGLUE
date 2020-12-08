@@ -107,7 +107,16 @@ We put the baseline system to [Unicoder](https://github.com/microsoft/Unicoder) 
 ### Submissions
 To submit your predictions for evaluation, please create a single folder which contains the 11 sub-folders named after each task (see [reference file](evaluation/Unicoder_prediction_on_XGLUE_test) for an example). 
 Inside each folder, create one prediction file for each language and name the file using the following format: `{language}.prediction` where `{language}` is the 2 character [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code.
-Please validate that you have done this correctly by evaluating against the development file. Once that is done, you could submit your results by emailing them to xglue@microsoft.com. The detailed requirements are listed at [XGLUE homepage](https://microsoft.github.io/XGLUE/). 
+Please validate that you have done this correctly by evaluating against the development file. Once that is done, you could submit your results by emailing them to xglue@microsoft.com.
+Your email should include:
+
+* Prediction results on test set. [Required]
+* Prediction results on dev set. [Recommended]
+* Individual/Team Name: Name of the individual or the team to appear in the leaderboard. [Required]
+* Individual/Team Institution: Name of the institution of the individual or the team to appear in the leaderboard. [Optional]
+* Model code: Training code for the model. [Recommended]
+* Model information: Name of the model/technique to appear in the leaderboard, whether used translated data in fine-tuning, the parameter number of model. [Required]
+* Paper Information: Name, Citation, URL of the paper if model is from a published work to appear in the leaderboard. [Optional] 
 
 ### Evaluation
 To evaluate your model's performance, we will compare your prediction files with the ground truth files.
