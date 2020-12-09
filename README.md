@@ -10,6 +10,7 @@
 * 2020-09-14: Fix the submission email bug.
 * 2020-09-14: add two sub-scores "XGLUE-Understanding Score" and "XGLUE-Generation Score" for understanding and generation respectively.
 * 2020-11-26: release the test part for better results reproducing.
+* 2020-12-09: Fix the submission link bug in github ReadMe.
 
 ## Introduction
 This repository contains information about the cross-lingual evaluation benchmark XGLUE, which is composed of 11 tasks spans 19 languages.
