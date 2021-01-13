@@ -134,10 +134,10 @@
 						<div class="row">&nbsp;</div>
 						<div id="xgluedata"> </div>
 						<div class="row">&nbsp;</div>
-						<h4>Leaderboard (05/25/2020-Present) ranked by XGLUE Score (average score on 11 tasks)</h4>
-						<p>XGLUE-Understanding Score is the average of tasks 1-9. XGLUE-Generation Score is the average of tasks 10-11.</p>
+						<h4>Understanding Leaderboard ranked by XGLUE Understanding Score (Average on task 1-9)</h4>
+						<h5> </h5>
 						<div style="text-align:center">
-							<table class="table table-striped" id='xgluetable' style="font-size:60%">
+							<table class="table table-striped" id='xgluetable' style="font-size:80%">
 							<thead>
 								<tr>
 									<th>Rank</th>
@@ -154,11 +154,7 @@
 									<th class="col-md-1">QADSM</th>
 									<th class="col-md-1">WPR</th>
 									<th class="col-md-1">QAM</th>
-									<th class="col-md-1">QG</th>
-									<th class="col-md-1">NTG</th>
 									<th class="col-md-1">XGLUE-Understanding Score</th>
-									<th class="col-md-1">XGLUE-Generation Score</th>
-									<th class="col-md-1">XGLUE Score</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -177,11 +173,7 @@
 										<td>71.4</td>
 										<td>74.7</td>
 										<td>73.4</td>
-										<td>-</td>
-										<td>-</td>
 										<td>80.1</td>
-										<td>-</td>
-										<td>-</td>
 								   </tr>
 									<tr>
 									   	<td><strong>Unicoder Baseline</strong><br/> (XGLUE Team)</td>
@@ -197,13 +189,47 @@
 										<td>68.4</td>
 										<td>73.9</td>
 										<td>68.9</td>
-										<td>10.6</td>
-										<td>10.7</td>
 										<td>76.1</td>
-										<td>10.7</td>
-										<td>64.2</td>
 								   </tr>
 									
+							</tbody>
+						</table>
+						</div>
+						<h4>Generation Leaderboard ranked by XGLUE Generation Score (Average on task 10, 11)</h4>
+						<div style="text-align:center">
+							<table class="table table-striped" id='xgluetable2' style="font-size:80%;width:70%">
+							<thead>
+								<tr>
+									<th>Rank</th>
+									<th class="col-md-1">Model</th>
+									<th class="col-md-1">Submission Date</th>
+									<th class="col-md-12">Dataset Translation</th>
+									<th class="param">Parameter (Million)</th>
+									<th class="col-md-1">QG</th>
+									<th class="col-md-1">NTG</th>
+									<th class="col-md-1">XGLUE-Generation Score</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tbody>
+									<tr>
+									   	<td><strong>Unicoder Baseline</strong><br/> (XGLUE Team)</td>
+									   	<td>2020-05-25</td>
+										<td>No</td>
+										<td>270M</td>
+										<td>10.6</td>
+										<td>10.7</td>
+										<td>10.7</td>
+								   </tr>
+									<tr>
+									   	<td><strong>MP-Tune</strong><br/> (ByteDance MLNLC)</td>
+									   	<td>2021-01-12</td>
+										<td>Yes</td>
+										<td>304M</td>
+										<td>8.1</td>
+										<td>9.4</td>
+										<td>8.7</td>
+								   </tr>
 							</tbody>
 						</table>
 						</div>
@@ -528,7 +554,7 @@
 		<script src="js/jquery.easing.min.js"></script>
 		<script src="js/scrolling-nav.js"></script>
 		<script>
-			var rankings = ['xgluetable']
+			var rankings = ['xgluetable', 'xgluetable2']
 			for(var j=0; j < rankings.length; j++) {
 				var rows = document.getElementById(rankings[j]).rows;
 				for(var i = 1, td; i < rows.length; i++){
