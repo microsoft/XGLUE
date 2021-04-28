@@ -79,17 +79,18 @@
 					<img src="img/MicrosoftLogo.png">
 				</center>
 				<div class="row">
-					<p>XGLUE is a new benchmark dataset to evaluate the performance of cross-lingual pre-trained models with respect to cross-lingual natural language understanding and generation.</p>
+					<p>XGLUE is a new benchmark dataset to evaluate the performance of cross-lingual pre-trained models with respect to cross-lingual natural language understanding and generation. </p>
+					<p><b>For people who are working on XTREME, we recommend you to submit results to XGLUE as well, especially for the XGLUE unique tasks, as (1) XGLUE includes tasks (News Classification, Query-Ad Matching, Web Page Ranking and QA Matching) from real-world scenarios, and all these datasets are generated and labeled by human, instead of MT engines; (2) XGLUE provides two cross-lingual text generation tasks.</b></p>
 					<p>XGLUE is composed of 11 tasks spans 19 languages. For each task, the training data is only available in English. This means that to succeed at XGLUE, a model must have a strong zero-shot cross-lingual transfer capability to learn from the English data of a specific task and transfer what it learned to other languages. Comparing to its concurrent work XTREME, XGLUE has two characteristics: First, it includes cross-lingual NLU and cross-lingual NLG tasks at the same time; Second, besides including 5 existing cross-lingual tasks (i.e. NER, POS, MLQA, PAWS-X and XNLI), XGLUE selects 6 new tasks from Bing scenarios as well, including News Classification (NC), Query-Ad Matching (QADSM), Web Page Ranking (WPR), QA Matching (QAM), Question Generation (QG) and News Title Generation (NTG). Such diversities of languages, tasks and task origin provide a comprehensive benchmark for quantifying the quality of a pre-trained model on cross-lingual natural language understanding and generation.</p>
 				</div>
 				<div class="row">
 					<h3>Important Updates</h3> 
 				</div>
-				<div class="row" style="color:red;">
+				<div class="row">
 					<ul>
-						<li>2020-09-14: Fix the submission email bug.</li>
-						<li>2020-09-14: add two sub-scores "XGLUE-Understanding Score" and "XGLUE-Generation Score" for understanding and generation respectively.</li>
-						<li>2020-11-26: release the test part for better results reproducing.</li>
+						<li>2021-04-28: add sub-scores for XGLUE unique tasks.</li>
+						<li>2020-11-26: release label of test dataset.</li>
+						<li>2020-09-14: add two sub-scores "XGLUE-Understanding Score" and "XGLUE-Generation Score".</li>
 					</ul>
 					<p></p>
 				</div>
@@ -190,6 +191,53 @@
 										<td>73.9</td>
 										<td>68.9</td>
 										<td>76.1</td>
+								   </tr>
+									
+							</tbody>
+						</table>
+						</div>
+						<div class="row">&nbsp;</div>
+						<h4>Understanding Leaderboard ranked by XGLUE Unique Task Score (Average on task 3,7,8,9)</h4>
+						<h5> </h5>
+						<div style="text-align:center">
+							<table class="table table-striped" id='xgluetable3' style="font-size:80%;width:75%">
+							<thead>
+								<tr>
+									<th>Rank</th>
+									<th class="col-md-9">Model</th>
+									<th class="col-md-1">Submission Date</th>
+									<th class="col-md-12">Dataset Translation</th>
+									<th class="param">Parameter (Million)</th>
+									<th class="col-md-1">NC</th>
+									<th class="col-md-1">QADSM</th>
+									<th class="col-md-1">WPR</th>
+									<th class="col-md-1">QAM</th>
+									<th class="col-md-1">XGLUE Unique Score</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tbody>
+									<tr>
+									   	<td><strong><a href="https://arxiv.org/abs/2009.05166">FILTER</a></strong><br/> (Microsoft Dynamics 365 AI Research)</td>
+									   	<td>2020-09-14</a></td>
+										<td>Yes</td>
+										<td>550M</td>
+										<td>83.5</td>
+										<td>71.4</td>
+										<td>74.7</td>
+										<td>73.4</td>
+										<td>75.8</td>
+								   </tr>
+									<tr>
+									   	<td><strong>Unicoder Baseline</strong><br/> (XGLUE Team)</td>
+									   	<td>2020-05-25</a></td>
+										<td>No</td>
+										<td>270M</td>
+										<td>83.5</td>
+										<td>68.4</td>
+										<td>73.9</td>
+										<td>68.9</td>
+										<td>73.7</td>
 								   </tr>
 									
 							</tbody>
@@ -563,7 +611,7 @@
 		<script src="js/jquery.easing.min.js"></script>
 		<script src="js/scrolling-nav.js"></script>
 		<script>
-			var rankings = ['xgluetable', 'xgluetable2']
+			var rankings = ['xgluetable', 'xgluetable2', 'xgluetable3']
 			for(var j=0; j < rankings.length; j++) {
 				var rows = document.getElementById(rankings[j]).rows;
 				for(var i = 1, td; i < rows.length; i++){
