@@ -161,10 +161,10 @@ def load_qg_ntg_data(task, lg):
 
     preds, labels = [], []
     last_query = ""
-    for item in open(pred_file):        
+    for item in open(pred_file, encoding='utf8'):
         preds.append(item.strip())
     
-    for item in open(label_file):
+    for item in open(label_file, encoding='utf8'):
         last_query = item.split("\t")[0]
         labels.append(item.split("\t")[-1].strip())
 
